@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./js/funcoes.js"></script>
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -20,7 +23,7 @@
                 </div>
                 <nav>
                     <ul class="navList">
-                        <li><a href="">Cadastro</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
                         <li><a href="">Sobre Nos</a></li>
                     </ul>
                 </nav>
@@ -31,12 +34,19 @@
                 <div class="form">
                     <div class="container">
                         <h1>Log in</h1>
-                        <input type="email" placeholder="username">
-                        <input type="password" placeholder="password">
-                        <button>Login</button>
+                        <input type="email" id="email_input" placeholder="username">
+                        <input type="password" id="senha_input" placeholder="password">
+                        <button onclick="entrar()">Login</button>
+                        <!-- <div id="div_aguardar" class="loading-div" style="display:none;">
+
+                            <img src="./assets/circle-loading.gif" id="loading-gif">
+                        </div>
+                        <div id="div_erros_login">
+
+                        </div> -->
                     </div>
                 </div>
-                <div id="imgFrase1">
+                <div id=" imgFrase1">
                     <img src="assets/imgs/whenYou.png" alt="">
                 </div>
             </div>
@@ -48,34 +58,43 @@
         <div class="container">
             <div id="sobreText">
                 <h2>A Song of Ice and Fire</h2>
-                <p>As Crônicas de Gelo e Fogo (no original em inglês: A Song of Ice and Fire) é uma série de livros de
+                <p>As Crônicas de Gelo e Fogo (no original em inglês: A Song of Ice and Fire) é uma série de livros
+                    de
                     fantasia
                     épica escrita pelo romancista e roteirista norte-americano George R. R. Martin e publicada pela
                     editora
                     Bantam Spectra. Martin começou a desenvolvê-la em 1991 e o primeiro volume foi lançado em 1996.
-                    Originalmente concebida para ser uma trilogia, a saga agora consiste em cinco volumes publicados,
+                    Originalmente concebida para ser uma trilogia, a saga agora consiste em cinco volumes
+                    publicados,
                     com
                     mais
                     dois planejados. Há também três contos derivados e algumas novelas que consistem de resumos dos
                     romances
                     principais.</p>
 
-                <p>Há três argumentos principais na história, que se tornam cada vez mais interligados: a crônica de uma
+                <p>Há três argumentos principais na história, que se tornam cada vez mais interligados: a crônica de
+                    uma
                     guerra
-                    civil dinástica entre várias famílias concorrentes pelo controle dos Sete Reinos; a ameaça crescente
+                    civil dinástica entre várias famílias concorrentes pelo controle dos Sete Reinos; a ameaça
+                    crescente
                     das
-                    criaturas sobrenaturais conhecidas como os Outros, que habitam além de uma imensa muralha de gelo ao
+                    criaturas sobrenaturais conhecidas como os Outros, que habitam além de uma imensa muralha de
+                    gelo ao
                     Norte;
-                    e a ambição de Daenerys Targaryen, a filha exilada de um rei assassinado em uma outra guerra civil
+                    e a ambição de Daenerys Targaryen, a filha exilada de um rei assassinado em uma outra guerra
+                    civil
                     treze
                     anos antes, prestes a voltar à sua terra e reivindicar seu trono de direito.</p>
 
                 <p>
-                    A série foi traduzida para quase 50 idiomas e vendeu mais de 90 milhões de exemplares mundialmente
+                    A série foi traduzida para quase 50 idiomas e vendeu mais de 90 milhões de exemplares
+                    mundialmente
                     (até
-                    abril de 2019).[1] Todos os romances foram, em geral, muito bem recebidos pela crítica literária e
+                    abril de 2019).[1] Todos os romances foram, em geral, muito bem recebidos pela crítica literária
+                    e
                     pelo
-                    público, sendo indicados a diversos prêmios de fantasia e ficção científica, como o Prêmio Locus, o
+                    público, sendo indicados a diversos prêmios de fantasia e ficção científica, como o Prêmio
+                    Locus, o
                     Prêmio
                     Nebula e o Prêmio Hugo. No Brasil os livros são publicados pela editora Suma (anteriormente pela
                     LeYa) e
@@ -87,10 +106,12 @@
                     videogame,
                     histórias em quadrinhos, bonecos em miniatura e uma série de TV intitulada Game of Thrones. A
                     atração
-                    televisiva apresentou a saga a um maior número de leitores e lhe trouxe maior notoriedade, fazendo
+                    televisiva apresentou a saga a um maior número de leitores e lhe trouxe maior notoriedade,
+                    fazendo
                     com
                     que
-                    os quatro primeiros volumes da série surgissem entre os dez primeiros colocados na referencial lista
+                    os quatro primeiros volumes da série surgissem entre os dez primeiros colocados na referencial
+                    lista
                     de
                     mais
                     vendidos do jornal norte-americano The New York Times em 2011.</p>
@@ -100,7 +121,185 @@
             </div>
         </div>
     </div>
+    <div id="sectionFavorite">
+        <div class="container">
+            <div class="character">
+                <div class="cardPersona">
+                    <img src="assets/imgs/Jonh.png" alt="">
+                    <h3>Jonh Snow</h3>
+                </div>
+                <div class="cardText">
+                    <p>
+                        Jon Snow, nascido Aegon Targaryen, é o filho de Rhaegar Targaryen e Lyanna Stark, o falecido
+                        Príncipe de Pedra do Dragão. Jon foi criado como o filho bastardo do tio, Eddard Stark, em
+                        Winterfell. Na infância, seus primos foram criados como meio-irmãos, e Jon nunca soube seu real
+                        parentesco quando criança. Ele desenvolveu um forte relacionamento com a sua família,
+                        principalmente com Robb e Arya Stark.
+                    </p>
+                    <p>
+                        Quando mais velho, Jon se juntou a Patrulha da Noite, eventualmente sendo escolhido pelo Senhor
+                        Comandante Mormont como seu intendente pessoal. Durante uma expedição para lá da Muralha, Qhorin
+                        Meia-Mão obrigou Jon a se juntar ao Povo Livre, onde se apaixonou e quebrou seus votos com
+                        Ygritte. Ele também conheceu o Rei para lá da Muralha Mance Rayder e, quando voltou para o sul
+                        da Muralha, traiu seus companheiros selvagens e Ygritte, voltando para a Patrulha para
+                        preparar-lhes contra o ataque de Mance e seu exército. Mais tarde, Jon foi feito Senhor
+                        Comandante graças a seus feitos durante a Batalha de Castelo Negro. Ele tentou fazer uma aliança
+                        com o Povo Livre, salvando-os em Durolar da ameaça dos Caminhantes Brancos.
+                    </p>
+                </div>
+            </div>
+            <div class="character">
+                <div class="cardPersona">
+                    <img src="assets/imgs/Danerys.png" alt="">
+                    <h3>Danerys Targaryen</h3>
+                </div>
+                <div class="cardText">
+                    <p>
+                        Jon Snow, nascido Aegon Targaryen, é o filho de Rhaegar Targaryen e Lyanna Stark, o falecido
+                        Príncipe de Pedra do Dragão. Jon foi criado como o filho bastardo do tio, Eddard Stark, em
+                        Winterfell. Na infância, seus primos foram criados como meio-irmãos, e Jon nunca soube seu real
+                        parentesco quando criança. Ele desenvolveu um forte relacionamento com a sua família,
+                        principalmente com Robb e Arya Stark.
+                    </p>
+                    <p>
+                        Quando mais velho, Jon se juntou a Patrulha da Noite, eventualmente sendo escolhido pelo Senhor
+                        Comandante Mormont como seu intendente pessoal. Durante uma expedição para lá da Muralha, Qhorin
+                        Meia-Mão obrigou Jon a se juntar ao Povo Livre, onde se apaixonou e quebrou seus votos com
+                        Ygritte. Ele também conheceu o Rei para lá da Muralha Mance Rayder e, quando voltou para o sul
+                        da Muralha, traiu seus companheiros selvagens e Ygritte, voltando para a Patrulha para
+                        preparar-lhes contra o ataque de Mance e seu exército. Mais tarde, Jon foi feito Senhor
+                        Comandante graças a seus feitos durante a Batalha de Castelo Negro. Ele tentou fazer uma aliança
+                        com o Povo Livre, salvando-os em Durolar da ameaça dos Caminhantes Brancos.
+                    </p>
+                </div>
+            </div>
+            <div class="character">
+                <div class="cardPersona">
+                    <img src="assets/imgs/Tyron.png" alt="">
+                    <h3>Tyron Lanister</h3>
+                </div>
+                <div class="cardText">
+                    <p>
+                        Jon Snow, nascido Aegon Targaryen, é o filho de Rhaegar Targaryen e Lyanna Stark, o falecido
+                        Príncipe de Pedra do Dragão. Jon foi criado como o filho bastardo do tio, Eddard Stark, em
+                        Winterfell. Na infância, seus primos foram criados como meio-irmãos, e Jon nunca soube seu real
+                        parentesco quando criança. Ele desenvolveu um forte relacionamento com a sua família,
+                        principalmente com Robb e Arya Stark.
+                    </p>
+                    <p>
+                        Quando mais velho, Jon se juntou a Patrulha da Noite, eventualmente sendo escolhido pelo Senhor
+                        Comandante Mormont como seu intendente pessoal. Durante uma expedição para lá da Muralha, Qhorin
+                        Meia-Mão obrigou Jon a se juntar ao Povo Livre, onde se apaixonou e quebrou seus votos com
+                        Ygritte. Ele também conheceu o Rei para lá da Muralha Mance Rayder e, quando voltou para o sul
+                        da Muralha, traiu seus companheiros selvagens e Ygritte, voltando para a Patrulha para
+                        preparar-lhes contra o ataque de Mance e seu exército. Mais tarde, Jon foi feito Senhor
+                        Comandante graças a seus feitos durante a Batalha de Castelo Negro. Ele tentou fazer uma aliança
+                        com o Povo Livre, salvando-os em Durolar da ameaça dos Caminhantes Brancos.
+                    </p>
+                </div>
+            </div>
+            <div class="character">
+                <div class="cardPersona">
+                    <img src="assets/imgs/Arya.png" alt="">
+                    <h3>Arya Stark</h3>
+                </div>
+                <div class="cardText">
+                    <p>
+                        Jon Snow, nascido Aegon Targaryen, é o filho de Rhaegar Targaryen e Lyanna Stark, o falecido
+                        Príncipe de Pedra do Dragão. Jon foi criado como o filho bastardo do tio, Eddard Stark, em
+                        Winterfell. Na infância, seus primos foram criados como meio-irmãos, e Jon nunca soube seu real
+                        parentesco quando criança. Ele desenvolveu um forte relacionamento com a sua família,
+                        principalmente com Robb e Arya Stark.
+                    </p>
+                    <p>
+                        Quando mais velho, Jon se juntou a Patrulha da Noite, eventualmente sendo escolhido pelo Senhor
+                        Comandante Mormont como seu intendente pessoal. Durante uma expedição para lá da Muralha, Qhorin
+                        Meia-Mão obrigou Jon a se juntar ao Povo Livre, onde se apaixonou e quebrou seus votos com
+                        Ygritte. Ele também conheceu o Rei para lá da Muralha Mance Rayder e, quando voltou para o sul
+                        da Muralha, traiu seus companheiros selvagens e Ygritte, voltando para a Patrulha para
+                        preparar-lhes contra o ataque de Mance e seu exército. Mais tarde, Jon foi feito Senhor
+                        Comandante graças a seus feitos durante a Batalha de Castelo Negro. Ele tentou fazer uma aliança
+                        com o Povo Livre, salvando-os em Durolar da ameaça dos Caminhantes Brancos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
 </html>
+<script>
+
+
+    function entrar() {
+        // aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
