@@ -5,118 +5,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Cadastro</title>
-
-
+    <title>Game of Thrones</title>
     <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon">
 
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
 
-    <!--header inicio-->
-    <div class="header">
+    <div id="background_1">
+        <header id="header">
+            <div class="container">
+                <div>
+                    <a href="#header"><img src="assets/imgs/logo/logo.png" id="logo" alt=""></a>
+                </div>
+                <nav>
+                    <ul class="navList">
+                        <li><a href="index.html">Login</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="hero">
+            <div class="container">
+                <div class="form">
+                    <div class="container">
+                        <h1>Cadastrar</h1>
+                        <input type="email" id="inpEmail" placeholder="email">
+                        <input type="text" id="inpUsername" placeholder="username">
+                        <input type="password" id="inpPassword" placeholder="senha">
+                        <input type="password" id="inpConfirmPassword" placeholder="senha confirmação">
+                        <select name="Familia" id="inpfamilia">
+                            <option value="0">Selecione uma das casas</option>
+                            <option value="1000">Targaryen</option>
+                            <option value="1001">Stark</option>]
+                            <option value="1002">Arryn</option>
+                            <option value="1003">Mormont</option>
+                            <option value="1004">Baratheon</option>
+                            <option value="1005">Greyjoy</option>
+                            <option value="1006">Lannister</option>
+                            <option value="1007">Tully</option>
+                            <option value="1008">Hightower</option>
+                            <option value="1009">Tyrell</option>
+                            <option value="1010">Velaryon</option>
+                            <option value="1011">Bolton</option>
+                            <option value="1012">Frey</option>
+                            <option value="1013">Tarly</option>
+                            <option value="1014">Marteli</option>
+                        </select>
+                        <button onclick="cadastrar()">Login</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/imgs/WinterIsComing.png" alt="" id="imgFrase1">
+                </div>
+            </div>
+
+        </div>
+    </div> 
+    
+    <footer>
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">
-                        Inicial
-                    </a>
-                </li>
-                <li>
-                    <a href="./simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li class="agora">
-                    <a href="./cadastro.html">Cadastro</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--header fim-->
-
-
-    <div class="banner ">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+            <div id="level1">
+                <a href="#">
+                    <img src="assets/imgs/logo/logo.png" alt="">
+                </a>
+                <h3>Projeto de Pesquisa e Inovacao <br>
+                    2022</h3>
+                <a href="#header">Volte ao Inicio</a>
+            </div>
+            <div id="level2">
+                <h3>Fanpage de Game Of Thrones</h3>
+                <a href="https://gameofthrones.fandom.com/wiki/Game_of_Thrones_Wiki">Referecias Bibliograficas <img src="assets/icon/fandom.png" alt=""></a>
             </div>
         </div>
-        <div class="container tamanho-conteudo">
-            <div class="card medio">
-                <h2>Bem-vindo!</h2>
-                <div class="formulario">
-
-                    <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-
-                    <span class="tipo_campo">Nome:</span>
-                    <input id="nome_input" type="text" placeholder="Seu nome">
-
-                    <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
-
-                    <span class="tipo_campo">Senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
-
-                    <span class="tipo_campo">Confirmação da Senha:</span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
-
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
-
-                </div>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    </footer>
 
 </body>
 
 </html>
-
 <script>
     function cadastrar() {
         aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        
+        var emailVar = inpEmail.value;
+        var usernameVar = inpUsername.value;
+        var senhaVar = inpPassword.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var casaVar = inpFamilia.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        if (emailVar == "" || usernameVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || casaVar == '0' ) {
+            
+            alert("Mensagem de erro para todos os campos em branco");
 
-            finalizarAguardar();
+            
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            
         }
 
         // Enviando o valor da nova input
@@ -142,24 +133,18 @@
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "index.html";
                 }, "2000")
-
-                limparFormulario();
-                finalizarAguardar();
+                
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
 
 </script>
