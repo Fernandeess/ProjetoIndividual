@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of Thrones</title>
+    <title>Cadastro</title>
     <script src="./js/funcoes.js"></script>
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon">
@@ -33,11 +33,11 @@
                 <div class="form">
                     <div class="container">
                         <h1>Cadastrar</h1>
-                        <input type="email" id="inpEmail" placeholder="email">
+                        <input type="email" id="inpEmail" maxlength="45" placeholder="email">
                         <input type="text" id="inpUsername" placeholder="username">
-                        <input type="password" id="inpPassword" placeholder="senha">
-                        <input type="password" id="inpConfirmPassword" placeholder="senha confirmação">
-                        <select name="Familia" id="inpfamilia">
+                        <input type="password" id="inpPassword" placeholder="senha" maxlength="25">
+                        <input type="password" id="inpConfirmPassword" placeholder="senha confirmação" maxlength="25">
+                        <select name="Familia" id="inpFamilia">
                             <option value="0">Selecione uma das casas</option>
                             <option value="1000">Targaryen</option>
                             <option value="1001">Stark</option>]
@@ -55,7 +55,7 @@
                             <option value="1013">Tarly</option>
                             <option value="1014">Marteli</option>
                         </select>
-                        <button onclick="cadastrar()">Login</button>
+                        <button onclick="cadastrar()">Cadastrar</button>
                     </div>
                 </div>
                 <div>
@@ -86,28 +86,28 @@
 </body>
 
 </html>
+
 <script>
-    function cadastrar() {
-        aguardar();
+     function cadastrar() {
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        
         var emailVar = inpEmail.value;
         var usernameVar = inpUsername.value;
         var senhaVar = inpPassword.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var confirmacaoSenhaVar = inpConfirmPassword.value;
         var casaVar = inpFamilia.value;
 
-        if (emailVar == "" || usernameVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || casaVar == '0' ) {
-            
+        if (usernameVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || casaVar == "") {
+            cardErro.style.display = "block"
             alert("Mensagem de erro para todos os campos em branco");
 
-            
+            // finalizarAguardar();
             return false;
         }
         else {
-            
+            // setInterval(sumirMensagem, 5000)
         }
 
         // Enviando o valor da nova input
@@ -119,32 +119,39 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
+                nomeServer: usernameVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                casaServer: casaVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                // cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
                 setTimeout(() => {
                     window.location = "index.html";
                 }, "2000")
                 
+                // limparFormulario();
+                // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
         });
 
         return false;
     }
 
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 
 </script>
