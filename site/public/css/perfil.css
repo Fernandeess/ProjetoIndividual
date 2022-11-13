@@ -1,0 +1,123 @@
+*{
+    padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 334px;
+    width: 100%;
+     /* rgba(0, 0, 0, 0.221), url("https://s.aficionados.com.br/imagens/stark.jpg"); */
+      
+    
+    color: white;
+}
+body{
+  background-color: #141414;
+  color: white;
+}
+.infoPessoa{
+  display: flex;
+ width: fit-content;
+  justify-content: left;
+  align-items: flex-end;
+  text-align: center;
+  position: relative;
+  left: 183px;
+  bottom: 100px;
+}
+#username{
+  position: relative;
+  left: 22px;
+  bottom: 46px;
+  font-size: 40px;
+  font-weight: bold;
+}
+#perfilImg{
+  width: 200px;
+  border-radius: 70%;
+}
+#userInfo{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 120px;
+  
+}
+#userInfo .container{display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+
+}
+#userInfo  p {
+  display: flex;
+  font-size: 36px;
+  
+}
+#bioh2{
+  display: inline-block;
+  font-size: 25px;
+  
+}
+#bio{
+  width: 60%;
+}
+.addBio{
+  width: 65%;
+  display: flex;
+  
+  align-items: center;
+}
+.addBio textarea{
+  font-size: 30px;
+  width: 100%;
+  resize: none;
+  
+}
+.addBio button{
+  width: 20%;
+  height: 100%;
+  transition: 0.3s;
+  background-color: #880000;
+  border: none;
+  color:white;
+}
+.addBio button:hover{
+  
+  background-color: #ce0000;
+ 
+}
+.inventario{
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px 0px 0px;
+  width: 65%;
+  background-color:#262626;;
+  min-height: 200px;
+}
+.inventario h2{
+  color: rgb(255, 255, 255);
+  text-align: left;
+  margin: 20px 50px;
+  font-weight: bold;
+}
+#itens{
+  display: flex;
+  justify-content: center;
+}
+
+#itens .container{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.item{
+  margin: 20px 20px;
+}

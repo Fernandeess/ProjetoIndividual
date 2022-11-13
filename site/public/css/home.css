@@ -54,7 +54,7 @@ header .container {
 
 #perfilImg {
   width: 75px;
-  border-radius: 100px;
+  border-radius: 100%;
 }
 
 #coinsDiv {
