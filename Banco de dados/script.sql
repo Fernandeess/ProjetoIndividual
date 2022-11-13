@@ -1,30 +1,29 @@
-CREATE DATABASE GameOfThrones ;
-USE GameOfThrones;
+DROP database gameofthrones;
+CREATE DATABASE gameofthrones ;
+USE gameofthrones;
 
 CREATE TABLE Usuario (
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 email VARCHAR(256),
 senha VARCHAR(100),
-pontos INT,
+moeda INT default 0,
 CONSTRAINT ctChkEmail CHECK (email LIKE "%@%"),
 fkCasa int,
 FOREIGN KEY (fkCasa) REFERENCES Casa(idCasa),
-fkPerfil int,
-FOREIGN KEY (fkPerfil) REFERENCES Perfil(idPerfil)
+imgPerfil VARCHAR(2048),
+bio VARCHAR(200)
 ) ;
 CREATE TABLE Casa(
 idCasa INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45),
+nomeCasa VARCHAR(45),
 brasaoCasa varchar(2048),
 lema VARCHAR(256)
 ) AUTO_INCREMENT = 1000;
-CREATE TABLE Perfil(idPerfil INT PRIMARY KEY AUTO_INCREMENT,
-imgPerfil VARCHAR(2048),
-bio VARCHAR(200)
-)AUTO_INCREMENT = 100;
 
-INSERT INTO Casa(nome,brasaoCasa,lema) VALUES 
+
+
+INSERT INTO Casa(nomeCasa,brasaoCasa,lema) VALUES 
 
 ('Targaryen','https://s.aficionados.com.br/imagens/targaryen.jpg','Fogo e Sangue'),
 
@@ -46,8 +45,6 @@ INSERT INTO Casa(nome,brasaoCasa,lema) VALUES
 
 ('Tyrell','https://s.aficionados.com.br/imagens/tyrell.jpg','Crescendo forte'),
 
-('Mormont','https://s.aficionados.com.br/imagens/mormont.jpg','Aqui estamos nós'),
-
 ('Velaryon','https://s.aficionados.com.br/imagens/casa-velaryon_cke.jpg','O velho, o verdadeiro, o bravo'),
 
 ('Bolton','','Nossas lâminas são afiadas'),
@@ -57,9 +54,11 @@ INSERT INTO Casa(nome,brasaoCasa,lema) VALUES
 ('Tarly','https://s.aficionados.com.br/imagens/tarly.jpg','Primeiros em Batalha'),
 
 ('Martell','https://s.aficionados.com.br/imagens/martell.jpg',' Insubmissos, Não Curvados, Não Quebrados');
-
-
-
+DELETE FROM Usuario where idUsuario =5;
 SELECT * FROM Usuario;
-SELECT * FROM Perfil;
+
 SELECT * FROM Casa;
+/*
+alter table  Casa RENAME column	 nome to nomeCasa;
+SELECT * FROM Usuario join Casa on fkCasa = idCasa;
+*/
