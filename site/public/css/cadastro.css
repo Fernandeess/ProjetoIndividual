@@ -162,6 +162,7 @@ header nav ul {
 }
 
 .form button {
+  transition: 0.3s;
   width: 250px;
   height: 50px;
   background-color: #880000;
@@ -171,6 +172,10 @@ header nav ul {
   border-radius: 6px;
   font-weight: bolder;
   font-size: 17px;
+}
+.form button{
+  background-color: #ce0000;
+
 }
 
 .form button:hover {
