@@ -31,8 +31,8 @@
                 <div class="form">
                     <div class="container">
                         <h1>Log in</h1>
-                        <input type="email" id="email_input" placeholder="username">
-                        <input type="password" id="senha_input" placeholder="password">
+                        <input type="text" id="inpUsername" placeholder="username">
+                        <input type="password" id="inpSenha" placeholder="password">
                         <button onclick="entrar()">Login</button>
                         <!-- <div id="div_aguardar" class="loading-div" style="display:none;">
 
@@ -278,6 +278,7 @@
                 <h3>Fanpage de Game Of Thrones</h3>
                 <a href="https://gameofthrones.fandom.com/wiki/Game_of_Thrones_Wiki">Referecias Bibliograficas <img
                         src="assets/icon/fandom.png" alt=""></a>
+                        
             </div>
         </div>
     </footer>
@@ -291,20 +292,20 @@
     function entrar() {
         // aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var nomeVar = inpUsername.value;
+        var senhaVar = inpSenha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+        if (nomeVar == "" || senhaVar == "") {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            
         }
 
-        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM LOGIN: ", nomeVar);
         console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
@@ -313,7 +314,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
+                nomeServer: nomeVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
@@ -325,14 +326,17 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.MOEDA_USUARIO = json.moeda;
+                    sessionStorage.CASA_USUARIO = json.nomeCasa;
+                    sessionStorage.IMG_PERFIL = json.imgPerfil
+                    sessionStorage.BRASAO_CASA = json.brasaoCasa;
+                    sessionStorage.LEMA_CASA = json.lema;
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "insider user/home.html";
+                    }, 2000); // apenas para exibir o loading
 
                 });
 
@@ -342,19 +346,19 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                //  finalizarAguardar(texto);
                 });
             }
 
         }).catch(function (erro) {
             console.log(erro);
         })
-
+        // setInterval(sumirMensagem,5000)
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 
 </script>
