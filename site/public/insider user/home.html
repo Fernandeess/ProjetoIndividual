@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
     <title>Home</title>
     <link rel="stylesheet" href="../css/home.css">
     <script src="../js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="getValues()">
     <header>
 
         <div class="container">
@@ -23,7 +24,7 @@
             <div id="headerRight">
                 <div id="coinsDiv">
                     <img src="../assets/coin.gif" alt="">
-                    <div id="displayValue">000 </div> $
+                    <div id="displayValue">000 </div> 
                 </div>
                 <div>
                     <button id="sair" onclick="limparSessao()">Sair</button>
@@ -90,9 +91,13 @@
 </html>
 ""
 <script>
+
+   function getValues(){
     username.innerHTML = sessionStorage.NOME_USUARIO+" " + sessionStorage.CASA_USUARIO;
     perfilImg.src = sessionStorage.IMG_PERFIL;
     displayValue.innerHTML = sessionStorage.MOEDA_USUARIO
-    var validar = setInterval(() => validarSessao(), 300000)
+   }
+    
+    var validar = setInterval(() => validarSessao(), 2000)
     
 </script>
