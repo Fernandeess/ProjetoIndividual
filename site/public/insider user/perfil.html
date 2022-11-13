@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <script src="../js/funcoes.js"></script>
+</head>
+<body>
+    <header id="headerImg">
+        <h1 id="lemaH1">Lema</h1>
+    </header>
+    <main>
+        <img id="perfilImg" src="" alt="">
+        <h2 id="username">Nome</h2>
+        <p id="bio">Bio</p>
+    </main>
+</body>
+</html>
+<script>
+    var imgHeader = sessionStorage.BRASAO_CASA;
+    username.innerHTML = sessionStorage.NOME_USUARIO+" " + sessionStorage.CASA_USUARIO;
+    perfilImg.src = sessionStorage.IMG_PERFIL;
+    console.log(sessionStorage.BRASAO_CASA);
+    
+     headerImg.style = `background: linear-gradient(133deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 27%, rgba(0, 0, 0, 0.8) 100%), url("${imgHeader}") ;`
+    lemaH1.innerHTML = sessionStorage.LEMA_CASA;
+    displayValue.innerHTML = sessionStorage.MOEDA_USUARIO
+    var validar = setInterval(() => validarSessao(), 300000);
+        
+</script>
