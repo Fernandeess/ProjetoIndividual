@@ -4,11 +4,13 @@ function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
-    console.log("validar")
+    
     if (email != null && nome != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
+        // console.log("validado")
+         
     } else {
-        setTimeout(() => window.location = "../index.html",2000)
+        setTimeout(() => window.location = "../index.html",1000)
+        // console.log("vaza")
     }
 }
 
