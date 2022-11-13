@@ -288,7 +288,7 @@
 </html>
 <script>
 
-
+    sessionStorage.clear()
     function entrar() {
         // aguardar();
 
@@ -334,6 +334,7 @@
                     sessionStorage.IMG_PERFIL = json.imgPerfil
                     sessionStorage.BRASAO_CASA = json.brasaoCasa;
                     sessionStorage.LEMA_CASA = json.lema;
+                    sessionStorage.BIO_USUARIO = json.bio;
                     setTimeout(function () {
                         window.location = "insider user/home.html";
                     }, 2000); // apenas para exibir o loading
