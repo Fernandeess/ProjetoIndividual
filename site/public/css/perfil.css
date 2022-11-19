@@ -6,7 +6,7 @@
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   min-height: 334px;
   width: 100%;
@@ -14,6 +14,9 @@ header {
 
 
   color: white;
+}
+#lemaH1{
+  margin: 0px 10vw 0px 0px;
 }
 
 body {
@@ -73,14 +76,15 @@ width: 25px;
 }
 
 #userInfo p {
-  display: flex;
+  display: inline;
   font-size: 36px;
 
 }
 
 #bioh2 {
   display: inline-block;
-  font-size: 25px;
+  font-size: 20px;
+  color: rgb(187, 187, 187);
 
 }
 
@@ -141,15 +145,21 @@ width: 25px;
 #itens {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #itens .container {
   width: 90%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: left;
+  
 }
 
 .item {
   margin: 20px 20px;
+}
+.item img{
+  width: 100px;
 }
