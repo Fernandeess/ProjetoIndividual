@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title> Quiz Temporada 1 </title>
+</head>
+
+<body>
+    <header>
+        <h1> Quiz Basico </h1>
+    </header>
+    <div class="quiz">
+        <div class="container" id="quizContainer">
+            <div class="pergunta">
+                <div class="divTitle">
+                    <h2 class="titlePergunta"> 1 - Qual foi a primeira cena apresentada na primeira temporada?</h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion1" type="radio" value="0" name="question" id="label1P1" />
+                        <label for="label1P1">
+                            <p>1. Winterfell</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion1" type="radio" value="100" name="question" id="label2P1" />
+                        <label for="label2P1">
+                            <p>2. A Muralha</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion1" type="radio" value="0" name="question" id="label3P1" />
+                        <label for="label3P1">
+                            <p>3. King's landing</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion1" type="radio" value="0" name="question" id="label4P1" />
+                        <label for="label4P1">
+                            <p>4. Correrio</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao01()">Continuar</button>
+            </div>
+            <div class="pergunta" style="display:none;">
+                <div class="divTitle">
+                    <h2 class="titlePergunta"> 2 - Com quem Catelyn Tully se casaria antes de casar-se com Ned Stark?
+                    </h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion2" type="radio" value="100" name="question" id="label1P2" />
+                        <label for="label1P2">
+                            <p>1. Brandon Stark</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion2" type="radio" value="0" name="question" id="label2P2" />
+                        <label for="label2P2">
+                            <p>2. Petyr Baelish</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion2" type="radio" value="0" name="question" id="label3P2" />
+                        <label for="label3P2">
+                            <p>3. Jon Arryn
+                                Robert Baratheon
+                            </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion2" type="radio" value="0" name="question" id="label4P2" />
+                        <label for="label4P2">
+                            <p>4. Kevan Lannister</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao02()">Continuar</button>
+            </div>
+            <div class="pergunta" style="display:none;">
+                <div class="divTitle">
+                    <h2 class="titlePergunta"> 3 - Quem deu os ovos de dragão para Danerys
+                    </h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion3" type="radio" value="0" name="question" id="label1P3" />
+                        <label for="label1P3">
+                            <p>1. Khal Drogo</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion3" type="radio" value="0" name="question" id="label2P3" />
+                        <label for="label2P3">
+                            <p>2. Viserys Targaryen</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion3" type="radio" value="100" name="question" id="label3P3" />
+                        <label for="label3P3">
+                            <p>
+                                3. Jorah Mormont
+                            </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion3" type="radio" value="0" name="question" id="label4P3" />
+                        <label for="label4P3">
+                            <p>4. Illyrio Mopatis</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao03()">Continuar</button>
+            </div>
+            <div class="pergunta" style="display:none;">
+                <div class="divTitle">
+                    <h2 class="titlePergunta"> 4 - Quem foi o primeiro homem da patrulha da noite a ver um vagante
+                        branco?
+                    </h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion4" type="radio" value="0" name="question" id="label1P4" />
+                        <label for="label1P4">
+                            <p>1. Jon Snow</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion4" type="radio" value="100" name="question" id="label2P4" />
+                        <label for="label2P4">
+                            <p>2. Samwell Tarly</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion4" type="radio" value="0" name="question" id="label3P4" />
+                        <label for="label3P4">
+                            <p>
+                                3. Waymar Royce
+                            </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion4" type="radio" value="0" name="question" id="label4P4" />
+                        <label for="label4P4">
+                            <p>4. Tormund Gianstbane</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao04()">Continuar</button>
+            </div>
+            <div class="pergunta" style="display:none;">
+                <div class="divTitle">
+                    <h2 class="titlePergunta"> 5 - Qual a frase dita por Daenerys Targaryen depois que Khal Drogo mata
+                        seu irmão Vyseris?
+                    </h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label1P5" />
+                        <label for="label1P5">
+                            <p>1. Uma Coroa para um rei</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label2P5" />
+                        <label for="label2P5">
+                            <p>2. Fogo e Sangue</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="100" name="question" id="label3P5" />
+                        <label for="label3P5">
+                            <p>
+                                3. Ele não era um dragão. Fogo não pode matar um dragão
+                            </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label4P5" />
+                        <label for="label4P5">
+                            <p>4. No fim das contas, ele não possuía o sangue do dragão</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao05()">Continuar</button>
+            </div>
+            <div class="resultPanel" >
+                <div class="container">
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                    <div>your result</div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+<script src="../js/quiz.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+    <script>
+        const myChart = new Chart(
+            document.getElementById(`myChart`),
+            config
+        );
+    </script>
+</html>

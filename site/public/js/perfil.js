@@ -30,7 +30,7 @@ async function listar() {
     }
 
 
-
+    
 }
 
 const inptBio = document.querySelector("#inpBio")
