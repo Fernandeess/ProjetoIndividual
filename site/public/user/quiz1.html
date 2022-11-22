@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/quiz.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title> Quiz Temporada 1 </title>
+    <title> Quiz Facil </title>
 </head>
 
 <body>
     <header>
-        <h1> Quiz Basico </h1>
+        <h1> Quiz Facil</h1>
     </header>
     <div class="quiz">
         <div class="container" id="quizContainer">
@@ -69,8 +69,8 @@
                     <label class="containerOption">
                         <input class="optionsQuestion2" type="radio" value="0" name="question" id="label3P2" />
                         <label for="label3P2">
-                            <p>3. Jon Arryn
-                                Robert Baratheon
+                            <p>
+                                3. Jon Arryn
                             </p>
                         </label>
                     </label>
@@ -156,6 +156,41 @@
             </div>
             <div class="pergunta" style="display:none;">
                 <div class="divTitle">
+                    <h2 class="titlePergunta"> 5 - Qual o nome dos lobos dos filhos de Ned Stark.
+                    </h2>
+                </div>
+                <div class="options">
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label1P5" />
+                        <label for="label1P5">
+                            <p>1. Fantasma, Nymeria, Princesa, Monstro, Verão, Cão Felpudo</p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="100" name="question" id="label2P5" />
+                        <label for="label2P5">
+                            <p>1. Fantasma,Nymeria,Princesa,Vento Cinzento,Verão,Cão </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label3P5" />
+                        <label for="label3P5">
+                            <p>
+                                <p>1. Fantasma,Nymeria,Princesa,Vento Azul,Verão,Cão Felpudo</p>
+                            </p>
+                        </label>
+                    </label>
+                    <label class="containerOption">
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label4P5" />
+                        <label for="label4P5">
+                            <p>1. Fantasma, Nymeria, Princesa, Vento Cinzento, Verão, Cão Felpudo</p>
+                        </label>
+                    </label>
+                </div>
+                <button class="btnContinuar" onclick="questao05()">Continuar</button>
+            </div>
+            <div class="pergunta" style="display:none;">
+                <div class="divTitle">
                     <h2 class="titlePergunta"> 5 - Qual a frase dita por Daenerys Targaryen depois que Khal Drogo mata
                         seu irmão Vyseris?
                     </h2>
@@ -190,13 +225,12 @@
                 </div>
                 <button class="btnContinuar" onclick="questao05()">Continuar</button>
             </div>
-            <div class="resultPanel" >
+            <div class="resultPanel" style="display:none;" >
                 <div class="container">
                     <div>
-                        <canvas id="myChart"></canvas>
+                        <div id="showResult">Você Foi Mal</div>
+                        <div id="showPoints"></div>
                     </div>
-
-                    <div>your result</div>
                 </div>
             </div>
 
@@ -208,32 +242,5 @@
 
 <script src="../js/quiz.js"></script>
 
-<script>
-    const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script>
-    <script>
-        const myChart = new Chart(
-            document.getElementById(`myChart`),
-            config
-        );
-    </script>
+
 </html>
