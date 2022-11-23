@@ -29,7 +29,7 @@
                 <div class="form">
                     <div class="container">
                         <h1>Log in</h1>
-                        <input type="text" id="inpUsername" placeholder="username">
+                        <input type="email" id="inpEmail" placeholder="Email">
                         <input type="password" id="inpSenha" placeholder="password">
                         <button onclick="entrar()">Login</button>
                         <div id="div_aguardar" class="loading-div" style="display:none;">
@@ -283,14 +283,14 @@
     sessionStorage.clear()
     
     function entrar() {
-        var nomeVar = inpUsername.value;
+        var emailVar = inpEmail.value;
         var senhaVar = inpSenha.value;
-        if (nomeVar == "" && senhaVar == "") {
+        if (emailVar == "" && senhaVar == "") {
             div_erros_login.style = `display:block;`
             div_erros_login.innerHTML = `Campos não podem estar vazio`
             return false;
         }
-        else if (nomeVar == "") {
+        else if (emailVar == "") {
             div_erros_login.style = `display:block;`
             div_erros_login.innerHTML = `Prencha todos os campos`
             return false;
@@ -302,7 +302,7 @@
         else {
             
         }
-        console.log("FORM LOGIN: ", nomeVar);
+        console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -310,7 +310,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeServer: nomeVar,
+                emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {

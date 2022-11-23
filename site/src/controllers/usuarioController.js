@@ -31,16 +31,16 @@ function listar(req, res) {
 }
 
 function entrar(req, res) {
-    var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
-    if (nome == undefined) {
+    if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
         
-        usuarioModel.entrar(nome, senha)
+        usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
