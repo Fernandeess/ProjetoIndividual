@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,13 @@
 </head>
 
 <body onload="getValues()">
+    <div id="sideMenu">
+        <a href="home.html">Home</a>
+    </div>
+    
     <header id="headerImg">
         <h1 id="lemaH1">Lema</h1>
-
+        
     </header>
     <div class="infoPessoa">
         <img id="perfilImg" src="" alt="Imagem de Perfil">
@@ -36,10 +40,10 @@
             </div>
         </div>
     </main>
-    <script src="../js/perfil.js"></script>
+    
 
 </body>
-
+<script src="../js/perfil.js"></script>
 </html>
 <script>
     function getValues() {
@@ -47,16 +51,11 @@
         username.innerHTML = sessionStorage.NOME_USUARIO + " " + sessionStorage.CASA_USUARIO;
         perfilImg.src = sessionStorage.IMG_PERFIL;
         console.log(sessionStorage.BRASAO_CASA);
-        headerImg.style = `background: linear-gradient(133deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 27%, rgba(0, 0, 0, 0.8) 100%), url("${imgHeader}") ;
+        headerImg.style = `background: linear-gradient(133deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 27%, rgba(0, 0, 0, 0.1) 100%), url("${imgHeader}") ;
     background-size:auto;
     background-position: center;`
         lemaH1.innerHTML = sessionStorage.LEMA_CASA;
     }
-   
-    
     var validar = setInterval(() => validarSessao(), 300000);
-    getBio.innerHTML = sessionStorage.BIO_USUARIO
-
-
-
+    getBio.innerHTML = sessionStorage.BIO_USUARIO;
 </script>

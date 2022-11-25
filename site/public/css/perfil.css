@@ -3,6 +3,37 @@
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
 }
+#sideMenu{
+  transition: 0.3s;
+  height: 100vh;
+  z-index: 200;
+  float: left;
+  width: 1vw;
+  background-color: #2a2a2a;
+  position: fixed;
+  overflow-x:hidden;
+
+  display: flex;
+  justify-content: center;
+  
+}
+ #sideMenu a{
+  margin: 20px 0px 20px 0px;
+color: white;
+text-decoration: none;
+width: 100%;
+padding: 20px 0px;
+height: fit-content;  
+text-align: center;
+font-weight: bold;
+background-color: #880000;
+}
+#sideMenu:hover{
+  width: 6vw;
+}
+#sideMenu a:hover{
+background-color: #ce0000;
+}
 
 header {
   display: flex;

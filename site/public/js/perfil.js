@@ -35,6 +35,7 @@ async function listar() {
 
 const inptBio = document.querySelector("#inpBio")
 const btn = document.querySelector(".btnEnviar")
+
 async function enviarFormulario() {
     const idPerfil = sessionStorage.getItem("ID_USUARIO");
     const bio = inptBio.value
@@ -65,8 +66,10 @@ async function enviarFormulario() {
 const inptIMG = document.querySelector("#inpImg")
 const btnIMG = document.querySelector(".btnEnviarImg")
 async function enviarFormularioIMG() {
+    perfilImg.style =`display:flex;`
     const idPerfil = sessionStorage.getItem("ID_USUARIO");
     const img = inptIMG.value
+
 
     const options = {
         method: "PUT",
