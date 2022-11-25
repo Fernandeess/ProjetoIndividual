@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/quiz.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
     <title> Quiz Facil </title>
 </head>
 
 <body>
     <header>
-        <h1> Quiz Facil</h1>
+        <h1> Quiz Facil </h1>
     </header>
     <div class="quiz">
         <div class="container" id="quizContainer">
@@ -167,23 +167,21 @@
                         </label>
                     </label>
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="100" name="question" id="label2P5" />
+                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label2P5" />
                         <label for="label2P5">
-                            <p>1. Fantasma,Nymeria,Princesa,Vento Cinzento,Verão,Cão </p>
+                            <p>2. Fantasma, Nymeria, Princesa, Vento Cinzento, Verão, Cão </p>
                         </label>
                     </label>
                     <label class="containerOption">
                         <input class="optionsQuestion5" type="radio" value="0" name="question" id="label3P5" />
                         <label for="label3P5">
-                            <p>
-                                <p>1. Fantasma,Nymeria,Princesa,Vento Azul,Verão,Cão Felpudo</p>
-                            </p>
+                                <p>3. Fantasma, Nymeria, Princesa, Vento Azul, Verão, Cão Felpudo</p>
                         </label>
                     </label>
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label4P5" />
+                        <input class="optionsQuestion5" type="radio" value="100" name="question" id="label4P5" />
                         <label for="label4P5">
-                            <p>1. Fantasma, Nymeria, Princesa, Vento Cinzento, Verão, Cão Felpudo</p>
+                            <p>4. Fantasma, Nymeria, Princesa, Vento Cinzento, Verão, Cão Felpudo</p>
                         </label>
                     </label>
                 </div>
@@ -191,46 +189,46 @@
             </div>
             <div class="pergunta" style="display:none;">
                 <div class="divTitle">
-                    <h2 class="titlePergunta"> 5 - Qual a frase dita por Daenerys Targaryen depois que Khal Drogo mata
-                        seu irmão Vyseris?
+                    <h2 class="titlePergunta"> 5 - Qual a frase dita por Daenerys Targaryen depois que Khal Drogo mata seu irmão Vyseris?
                     </h2>
                 </div>
                 <div class="options">
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label1P5" />
-                        <label for="label1P5">
+                        <input class="optionsQuestion6" type="radio" value="0" name="question" id="label1P6" />
+                        <label for="label1P6">
                             <p>1. Uma Coroa para um rei</p>
                         </label>
                     </label>
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label2P5" />
-                        <label for="label2P5">
+                        <input class="optionsQuestion6" type="radio" value="0" name="question" id="label2P6" />
+                        <label for="label2P6">
                             <p>2. Fogo e Sangue</p>
                         </label>
                     </label>
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="100" name="question" id="label3P5" />
-                        <label for="label3P5">
+                        <input class="optionsQuestion6" type="radio" value="100" name="question" id="label3P6" />
+                        <label for="label3P6">
                             <p>
                                 3. Ele não era um dragão. Fogo não pode matar um dragão
                             </p>
                         </label>
                     </label>
                     <label class="containerOption">
-                        <input class="optionsQuestion5" type="radio" value="0" name="question" id="label4P5" />
-                        <label for="label4P5">
+                        <input class="optionsQuestion6" type="radio" value="0" name="question" id="label4P6" />
+                        <label for="label4P6">
                             <p>4. No fim das contas, ele não possuía o sangue do dragão</p>
                         </label>
                     </label>
                 </div>
-                <button class="btnContinuar" onclick="questao05()">Continuar</button>
+                <button class="btnContinuar" onclick="questaoFinal()">Continuar</button>
             </div>
-            <div class="resultPanel" style="display:none;" >
+            <div class="resultPanel" style="display:none;">
                 <div class="container">
                     <div>
-                        <div id="showResult">Você Foi Mal</div>
+                        <div id="showResult"></div>
                         <div id="showPoints"></div>
                     </div>
+                    <div id="showRank"></div>
                 </div>
             </div>
 

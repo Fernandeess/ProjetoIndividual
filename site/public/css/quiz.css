@@ -7,8 +7,8 @@ body{
     background-color: #141414;
     color: white;
     background-image: url('../assets/imgs/background_4.png');
-    background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 header{
     display: flex;
@@ -47,6 +47,7 @@ header{
     display: flex;
     width: 100%;
     margin: 20px;
+    justify-content: center;
 }
 .titlePergunta{
     font-size: 30px;
