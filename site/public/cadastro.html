@@ -18,7 +18,7 @@
         <header id="header">
             <div class="container">
                 <div>
-                    <a href="#header"><img src="assets/imgs/logo/logo.png" id="logo" alt=""></a>
+                    <a href="index.html"><img src="assets/imgs/logo/logo.png" id="logo" alt=""></a>
                 </div>
                 <nav>
                     <ul class="navList">
@@ -33,10 +33,10 @@
                 <div class="form">
                     <div class="container">
                         <h1>Cadastrar</h1>
-                        <input type="email" id="inpEmail" maxlength="45" placeholder="email">
-                        <input type="text" id="inpUsername" placeholder="username">
-                        <input type="password" id="inpPassword" placeholder="senha" maxlength="25">
-                        <input type="password" id="inpConfirmPassword" placeholder="senha confirmação" maxlength="25">
+                        <input type="email" id="inpEmail" maxlength="45" placeholder="Email">
+                        <input type="text" id="inpUsername" placeholder="Primeiro nome">
+                        <input type="password" id="inpPassword" placeholder="Senha" maxlength="25">
+                        <input type="password" id="inpConfirmPassword" placeholder="Senha confirmação" maxlength="25">
                         <select name="Familia" id="inpFamilia">
                             <option value="0">Selecione uma das casas</option>
                             <option value="1000">Targaryen</option>
@@ -56,6 +56,12 @@
                             <option value="1014">Marteli</option>
                         </select>
                         <button onclick="cadastrar()">Cadastrar</button>
+                        <div id="div_aguardar" class="loading-div" style="display:none;">
+                            <img src="assets/circle-loading.gif" id="loading-gif">
+                        </div>
+                        <div id="div_erros_login" style="display:none;">
+                        
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -72,7 +78,7 @@
                 <a href="#">
                     <img src="assets/imgs/logo/logo.png" alt="">
                 </a>
-                <h3>Projeto de Pesquisa e Inovacao <br>
+                <h3>Projeto de pesquisa e inovação <br>
                     2022</h3>
                 <a href="#header">Volte ao Inicio</a>
             </div>
@@ -89,6 +95,7 @@
 
 <script>
      function cadastrar() {
+        div_erros_login.innerHTML =""
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
@@ -99,16 +106,49 @@
         var confirmacaoSenhaVar = inpConfirmPassword.value;
         var casaVar = inpFamilia.value;
 
-        if (usernameVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || casaVar == "") {
-            cardErro.style.display = "block"
-            alert("Mensagem de erro para todos os campos em branco");
-
+        if (usernameVar == "" && emailVar == "" && senhaVar == "" && confirmacaoSenhaVar == "" && casaVar == 0) {
+            // cardErro.style.display = "block"
+          //  alert("Mensagem de erro para todos os campos em branco");
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML = `Campos não podem estar vazio`
             // finalizarAguardar();
             return false;
         }
-        else {
-            // setInterval(sumirMensagem, 5000)
+        if (usernameVar == ""){
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML = `Prencha o nome`
+            return false;
         }
+        if (emailVar == "" && senhaVar == "") {
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML = `Email e senha não podem estar vazio`
+            return false; 
+        }
+         if (emailVar == "") {
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML += `Email não pode estar vazio`
+            return false;
+        }if (emailVar.includes("@") == false) {
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML += `Email invalido`
+            return false;
+        }
+         if (senhaVar == "") {
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML += `Preencha o campo senha`
+            return false;
+        }
+        if(senhaVar != confirmacaoSenhaVar){
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML += `Senha de confirmação errada`
+            return false;
+        }
+        if(casaVar == 0){
+            div_erros_login.style = `display:block;`
+            div_erros_login.innerHTML += `Selecione uma das casas`
+        }
+        
+        
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
