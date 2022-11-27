@@ -1,11 +1,12 @@
 var quizModel = require("../models/quizModel");
 
 function listarRankingQuiz1(req, res) {
-    
+   var quiz = req.body.quiz;
     // console.log(idQuiz)
     console.log("Passei pelo controller listar")
-    console.log("id Quiz Testar",quizModel.listarRankingQuiz1())
-    quizModel.listarRankingQuiz1().then(function (resultado) {
+    console.log("id Quiz Testar",quizModel.listarRankingQuiz1(quiz))
+    quizModel.listarRankingQuiz1(quiz)
+    .then(function (resultado) {
             console.log("Passei pelo controller listar Then")
             console.log(resultado);
             if (resultado.length > 0) {

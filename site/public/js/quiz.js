@@ -1,7 +1,5 @@
 var pontosQuiz = 0;
 var qntdperguntas;
-var quiz = 1;
-var rank = [];
 var userPoints = {
     quizId:1,
     usuario: sessionStorage.getItem("ID_USUARIO"),
@@ -11,20 +9,25 @@ var userPoints = {
 }
 var perguntas = document.querySelectorAll(".pergunta")
 var painelResultado = document.querySelector(".resultPanel")
+var painelRank = document.querySelector(".panelRank")
 function mostrarPanel() {
 
     painelResultado.style = " display:flex; "
     showPoints.innerHTML = `Você Acertou <div id="pointBarra">${userPoints.qntdAcertos}</div>/${perguntas.length}`
     if (userPoints.pontosQuiz <= 200) {
-        showResult.innerHTML = "Você Foi Mal"
+        gifResult.src = "https://media4.giphy.com/media/AdpkljsgqWlXi/giphy.gif?cid=ecf05e473iqb8fk6lupfh0f0v5kq9zo9wlfo16oqsdz9buq5&rid=giphy.gif&ct=g"
+        showResult.innerHTML = "Você foi mal tente refazer"
         showResult.style = "Color:red;"
-    } else if (userPoints.pontosQuiz >= 200 && userPoints.pontosQuiz <= 400) {
-        showResult.innerHTML = "Você quase acertou todos, Boa!"
+    } else if ( userPoints.pontosQuiz <= 400) {
+        gifResult.src = "https://media2.giphy.com/media/l41K2dG6bwSVx6U7K/giphy.gif?cid=ecf05e47hi85b4bihmbxdemf6alhoudcsy5k3is2yzqqihx5&rid=giphy.gif&ct=g"
+        showResult.innerHTML = "Você quase acertou todos!!!"
         showResult.style = "Color:yellow;"
-    } else if (userPoints.pontosQuiz >= 500) {
-        showResult.innerHTML = "Perfect"
+    } else if (userPoints.pontosQuiz >= 600) {
+        gifResult.src = "https://media2.giphy.com/media/fmd46gcrNQJePMU6xa/200w.webp?cid=ecf05e47cz0cs8hcnjko13mw05jbti5bdlgndagiqaon2nfx&rid=200w.webp&ct=g"
+        showResult.innerHTML = "Alguem pare esse trem"
         showResult.style = "Color:green;"
     }
+    painelRank.style = "display:flex;"
     //     console.log(rank)
 
     // console.log("Tamanho array;",rank.length)
@@ -33,6 +36,7 @@ function mostrarPanel() {
     //    }
     
 }
+
 function questao01() {
     var checkIfIsSelected = 0
     var respostas01 = document.querySelectorAll(".optionsQuestion1")
@@ -47,6 +51,7 @@ function questao01() {
         } else {
             console.log("Selecione alguma das opçoes")
         }
+        
     }
     if (checkIfIsSelected == 4) {
         alert("Selecione um dos campos")
@@ -151,22 +156,23 @@ function questao05() {
 
 
 async function listarRankingQuiz1() {
-    // var quiz = 1;
+    var quiz = 1;
     const response = await fetch(`http://localhost:3333/quizzes/listarRankingQuiz1`, {
         method: "POST",
         headers: {
             "Content-type": "application/json"
 
-        }/*, body: JSON.stringify({ quiz }) */
+        }, body: JSON.stringify({ quiz }) 
     })
     console.log(response)
     console.log(response)
     console.log("Estou no then")
     var ranking = await response.json()
+    console.log(ranking);
     for(var i = 0; i <= ranking.length; i++){
-        rank.push(ranking[i])
+        
         for(var i = 0; i <= ranking.length; i++){
-            showRank.innerHTML+=`<div>${i +1} ${ranking[i].nome} Pontos: ${ranking[i].pontos}</div> `
+            tableRank.innerHTML+=`<tr><td>${i +1}</td> <td>${ranking[i].nome}</td> <td>${ranking[i].pontos}</td></tr> `
     
            }
     }
