@@ -63,15 +63,17 @@ body {
 #perfilImg{
   width: 200px; 
 }
-#btnAtualizar  {
-  border-radius: 6px;
+#btnSair  {
+    text-decoration: none;
+    border-radius: 6px;
     padding: 20px 50px;
     transition: 0.3s;
     background-color: #880000;
     border: none;
     color: white;
+    margin: 20px 0px;
   }
-#btnAtualizar:hover {
+#btnSair:hover {
   border-radius: 6px;
     background-color: #ce0000;
   

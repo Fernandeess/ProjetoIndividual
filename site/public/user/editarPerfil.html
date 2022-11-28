@@ -16,15 +16,16 @@
                 <div id="addBio">
                     <textarea placeholder="Escreva Sua Bio Aqui..." id="inpBio" maxlength="200"></textarea>
             
-                    <button class="btnEnviar">Atualizar Bio</button>
+                    <button onclick="enviarFormulario()" class="btnEnviar" onclick="enviarFormulario">Atualizar Bio</button>
                 </div>
                 <div id="addIMG">
                     <textarea onchange="checkIMG()" placeholder="Adicione o link da sua imagem aqui..." id="inpImg"></textarea>
                     
-                    <button class="btnEnviarImg">Atualizar Imagem de perfil</button>
+                    <button onclick="enviarFormularioIMG()
+                    " class="checkIMG()">Atualizar Imagem de perfil</button>
                 </div>
                 <div>
-                    <button  id="btnAtualizar">Voltar</button>
+                    <button id="btnSair" onclick="sair()">Voltar</button>
                 </div>
             </div>
         </div>
@@ -32,10 +33,5 @@
     
 </body>
 <script src="../js/perfil.js"></script>
-<script >
-    function checkIMG(){
-        perfilImg.src = inpImg.value ;
-     }
-     
-</script>
+
 </html>
