@@ -33,8 +33,8 @@ async function listar() {
     
 }
 
-const inptBio = document.querySelector("#inpBio")
-const btn = document.querySelector(".btnEnviar")
+var inptBio = document.querySelector("#inpBio")
+var btn = document.getElementsByClassName(".btnEnviar")
 
 async function enviarFormulario() {
     const idPerfil = sessionStorage.getItem("ID_USUARIO");
@@ -64,7 +64,13 @@ async function enviarFormulario() {
 }
 
 const inptIMG = document.querySelector("#inpImg")
-const btnIMG = document.querySelector(".btnEnviarImg")
+var btnIMG = document.getElementsByClassName(".btnEnviarImg")
+function checkIMG(){
+    perfilImg.src = inpImg.value ;
+    if(inptIMG != ""){
+        enviarFormularioIMG();
+    }
+ }
 async function enviarFormularioIMG() {
     perfilImg.style =`display:flex;`
     const idPerfil = sessionStorage.getItem("ID_USUARIO");
@@ -92,11 +98,11 @@ async function enviarFormularioIMG() {
         throw ("Houve um erro ao tentar realizar adicionar a bio! Código da response: " + response.status);
     }
 }
-btnAtt = document.querySelector("#btnAtualizar")
 
- function voltar(){
+const sairBTN = document.querySelector("#btnSair")
+
+ function sair(){
     window.location = "/user/perfil.html"
+    console.log(sairBTN)
  }
-btn.addEventListener("click", enviarFormulario)
-btnIMG.addEventListener("click", enviarFormularioIMG)
-btnAtt.addEventListener("click", voltar)
+
