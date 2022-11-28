@@ -39,7 +39,7 @@ PRIMARY KEY(idPontos,fkUsuario,fkQuiz)
 INSERT INTO Quiz (nomeQuiz) values('Quiz Iniciante'),
 (	'Quiz Desafiador'),('Quiz Desafiador');
 
---INSERT INTO Pontos(fkUsuario,fkQuiz,pontos) VALUES (3,1,300),(4,1,600),(7,1,400),(8,1,500);
+INSERT INTO Pontos(fkUsuario,fkQuiz,pontos) VALUES (1,1,600);
 
 INSERT INTO Casa(nomeCasa,brasaoCasa,lema) VALUES 
 
@@ -76,18 +76,17 @@ INSERT INTO Casa(nomeCasa,brasaoCasa,lema) VALUES
 -- INSERT QUIZ
 -- INSERT INTO Quiz (nomeQuiz)VALUES;
 SELECT * FROM Quiz;
---UPDATE Quiz set nomeQuiz = "Quiz nivel ancião" WHERE idQuiz = 3;
+UPDATE Quiz set nomeQuiz = "Quiz nivel ancião" WHERE idQuiz = 3;
 
 -- UPDATE Usuario SET bio = '' WHERE idUsuario = 1;
 -- DELETE FROM Usuario where idUsuario =2;
 SELECT * FROM Usuario;
-SELECT * FROM Quiz;
--- SELECT * FROM Usuario JOIN Pontos on id
--- SELECT  idPontos,nome,fkQuiz,pontos FROM Usuario JOIN Pontos ON idUsuario = fkUsuario JOIN Quiz ON idQuiz = fkQuiz  WHERE idQuiz = 1 order by pontos desc;
 -- SELECT last_insert_id();
 -- DELETE FROM  Usuario WHERE idUsuario = ;
 -- INSERT INTO Usuario (nome,email,senha,bio,fkCasa) values('Matheus','Rodrigmatheus19@gmail.com','1234','hgughkd',1000);
--- SELECT * FROM Usuario JOIN Pontos ON idUsuario = fkUsuario JOIN Quiz ON idQuiz = fkQuiz  WHERE idQuiz = 1 order by pontos desc;
+ -- SELECT * FROM Usuario JOIN Pontos ON idUsuario = fkUsuario JOIN Quiz ON idQuiz = fkQuiz  WHERE idQuiz = 1 order by pontos desc;
+ -- SELECT nome, max(pontos) as pontos FROM Usuario JOIN Pontos ON idUsuario = fkUsuario WHERE fkQuiz = ${idQuiz} group by nome order by pontos desc;
+ -- SELECT  idPontos,nome,fkQuiz,pontos FROM Usuario JOIN Pontos ON idUsuario = fkUsuario JOIN Quiz ON idQuiz = fkQuiz  WHERE idQuiz = ${idQuiz} order by pontos desc ;
 -- SELECT * FROM Casa;
 /*
 alter table  Casa RENAME column	 nome to nomeCasa;
