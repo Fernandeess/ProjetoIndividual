@@ -161,7 +161,6 @@ async function listarRankingQuiz1() {
         method: "POST",
         headers: {
             "Content-type": "application/json"
-
         }, body: JSON.stringify({ quiz }) 
     })
     console.log(response)
@@ -171,9 +170,8 @@ async function listarRankingQuiz1() {
     console.log(ranking);
     for(var i = 0; i <= ranking.length; i++){
         
-        for(var i = 0; i <= ranking.length; i++){
+        for(var i = 0; i < ranking.length ; i++){
             tableRank.innerHTML+=`<tr><td>${i +1}</td> <td>${ranking[i].nome}</td> <td>${ranking[i].pontos}</td></tr> `
-    
            }
     }
     
@@ -187,9 +185,30 @@ async function listarRankingQuiz1() {
         throw ("Houve um erro ao tentar realizar adicionar a bio! Código da response: " + response.status);
     }
 
-
-    
 }
+
+async function inserirPontos(){
+   var usuario = userPoints;
+   const options = {
+       method: "PUT",
+       headers: {
+           "Content-Type": "application/json"
+       },
+       body: JSON.stringify({ usuario })
+   }
+   const response = await fetch(`http://localhost:3333/quizzes/insertPoints`,
+       options
+   )
+   if (response.ok) {
+       console.log("Pontos Enviados com sucesso" + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+       
+   } else if (response.status == 404) {
+       window.alert("Deu 404!");
+   } else {
+       throw ("Houve um erro ao adicionar os pontos" + response.status);
+   }
+}
+
 
 function questaoFinal() {
     var checkIfIsSelected = 0
@@ -208,9 +227,12 @@ function questaoFinal() {
     if (checkIfIsSelected == 4) {
         alert("Selecione um dos campos")
     } else {
-        listarRankingQuiz1();
+        inserirPontos();
+        setTimeout(()=>{
+            listarRankingQuiz1();
         perguntas[5].style = "display:none;"
         mostrarPanel();
+        },3000)
         
         // for(var i =0; i <= rank.length;i++){
         //     showRank.innerHTML += ` ranks ${rank[i]}`
@@ -220,3 +242,4 @@ function questaoFinal() {
 }
 
 
+listarRankingQuiz1();

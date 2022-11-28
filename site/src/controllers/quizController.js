@@ -23,6 +23,33 @@ function listarRankingQuiz1(req, res) {
             }
         );
 }
+
+function insertPoints(req, res) {
+    var userInfo = req.body.usuario
+    console.log("user" + req.body.usuario);
+    // var bio = req.body.textBio;
+    var idUsuario = userInfo.usuario;
+    var idQuiz = userInfo.quizId;
+    var quizPoints = userInfo.pontosQuiz
+    
+
+    quizModel.insertPoints(idQuiz, idUsuario,quizPoints)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao inserir seus pontos: " , erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
 module.exports = {
-    listarRankingQuiz1
+    listarRankingQuiz1,
+    insertPoints
 }
