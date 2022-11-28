@@ -20,7 +20,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 160px;
+  height: 15vh;
   
 }
 
@@ -82,12 +82,13 @@ header nav ul {
   background-image: url("../assets/imgs/bgCadastro.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 99vh;
 }
 
 .hero {
   display: flex;
   justify-content: center;
-  height: 800px;
+  height: 95vh;
 }
 
 .hero .container {
@@ -103,9 +104,11 @@ header nav ul {
   background-color: #141414e0;
   display: flex;
   justify-content: center;
+  align-items: center;
   max-width: 403px;
-  height: 640px;
-  max-height: 611px;
+  min-height: 650px;
+  height: fit-content;
+  max-height: 700px;
   margin: 0px 50px 0px 30px;
   
 }
@@ -134,7 +137,7 @@ header nav ul {
   font-size: 25px;
   color: white;
   font-family: 'got';
-  margin: 50px;
+  margin: 20px 0px;
 }
 
 .form input  {
@@ -168,7 +171,7 @@ header nav ul {
   background-color: #880000;
   border: none;
   color: white;
-  margin: 15.5px 0px 50px 0px;
+  margin: 15.5px 0px 15.5px 0px;
   border-radius: 6px;
   font-weight: bolder;
   font-size: 17px;
@@ -187,7 +190,23 @@ header nav ul {
 .form input:focus {
   outline: none;
 }
-
+.loading-div{
+  padding: 20px;
+  }
+  #loading-gif{
+    width: 50px;
+  }
+  #div_erros_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9f0000;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 20px 0px;
+    flex-direction: column;
+    text-align: center;
+  }
 #imgFrase1 {
   width: 100%;
 }
