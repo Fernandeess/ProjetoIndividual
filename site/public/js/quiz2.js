@@ -1,7 +1,7 @@
 var pontosQuiz = 0;
 var qntdperguntas;
 var userPoints = {
-    quizId:1,
+    quizId:2,
     usuario: sessionStorage.getItem("ID_USUARIO"),
     pontosQuiz: 0,
     qntdAcertos: 0,
@@ -156,7 +156,7 @@ function questao05() {
 
 
 async function listarRankingQuiz1() {
-    var quiz = 1;
+    var quiz = 2;
     const response = await fetch(`http://localhost:3333/quizzes/listarRankingQuiz1`, {
         method: "POST",
         headers: {
@@ -168,7 +168,7 @@ async function listarRankingQuiz1() {
     console.log("Estou no then")
     var ranking = await response.json()
     console.log(ranking);
-    tableRank.innerHTML=``;
+    
     for(var i = 0; i <= ranking.length; i++){
         
         for(var i = 0; i < ranking.length ; i++){
@@ -242,5 +242,3 @@ function questaoFinal() {
     }
     console.log(userPoints.pontosQuiz)
 }
-
-
