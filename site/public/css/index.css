@@ -42,10 +42,14 @@ div #logo {
   z-index: +1;
 
 }
-
+a{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 header ul,
-li,
-a {
+li {
   list-style: none;
   color: white;
   text-decoration: none;
@@ -299,7 +303,7 @@ padding: 20px;
 
 #favoriteHeader {
   font-family: 'got';
-  padding: 50px 0px;
+  padding: 50px 0px 0px 0px;
   letter-spacing: 10px;
 
 }
@@ -316,7 +320,7 @@ padding: 20px;
 }
 
 .character {
-  margin: 30px 0px;
+  margin: 30px 0px 0px 0px;
  min-width:fit-content;
   min-height:fit-content;
   display: flex;
@@ -343,7 +347,6 @@ padding: 20px;
 
 .cardText {
   width: 250px;
-  
   padding: 0px 20px;
   display: flex;
   flex-direction: column;
@@ -351,10 +354,7 @@ padding: 20px;
   justify-content: center;
   
 }
-.cardText:hover{
-  height: 200px;
-  overflow-y: visible;
-}
+
 .cardText p {
   text-align: justify;
   font-size: 16px;
@@ -367,6 +367,9 @@ footer{
 }
 footer .container{
   width: 90%;
+}
+footer a img{
+  width: 50px;
 }
 #level1{
   display: flex;
@@ -385,4 +388,6 @@ footer .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
