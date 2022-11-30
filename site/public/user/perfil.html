@@ -21,9 +21,9 @@
         <div class="container">
             <img src="../assets/icon/game-of-thrones-logo-large.png" alt="">
             <a href="home.html">Home</a>
-        <a href="quiz1.html">Quiz 1</a>
-        <a href="quiz1.html">Quiz 2</a>
-        <a href="quiz3.html">Quiz 3</a>
+            <a href="quiz1.html">Quiz 1</a>
+            <a href="quiz1.html">Quiz 2</a>
+            <a href="quiz3.html">Quiz 3</a>
         </div>
 
     </div>
@@ -57,8 +57,7 @@
 
 </body>
 <script src="../js/perfil.js"></script>
-
-</html>
+<script>var validar = setInterval(() => validarSessao(), 2000)</script>
 <script>
     var contClicks = 0;
     function getValues() {
@@ -85,7 +84,7 @@
         if (contClicks % 2 == 0) {
             sideMenu.style = `width:0vw;`
             for (var i = 0; i <= linhas.length; i++) {
-                linhas[i].style ="background-color: #dbdbdb;" 
+                linhas[i].style = "background-color: #dbdbdb;"
 
             }
         } else {
@@ -100,3 +99,5 @@
     }
 
 </script>
+
+</html>
