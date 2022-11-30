@@ -21,13 +21,17 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 //Area de teste
-router.put("/adicionarBio/:idUsuario", function(req,res){
-    
-    usuarioController.adicionarBio(req,res)
+router.put("/adicionarBio/:idUsuario", function (req, res) {
+
+    usuarioController.adicionarBio(req, res)
 })
-router.put("/adicionarIMG/:idUsuario", function(req,res){
+router.put("/adicionarIMG/:idUsuario", function (req, res) {
     console.log("Editar Imagens ROUTER")
-    usuarioController.adicionarIMG (req,res)
+    usuarioController.adicionarIMG(req, res)
+})
+router.post("/listarUsuariosCasa", function (req, res) {
+    console.log("valores Casas Router")
+    usuarioController.listarUsuariosCasa(req, res)
 })
 ///
 module.exports = router;

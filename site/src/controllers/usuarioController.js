@@ -11,23 +11,23 @@ function listar(req, res) {
     var idUsuario = req.body.idUser;
     console.log(idUsuario)
     console.log("Passei pelo controller listar")
-    console.log("id usuario Testar",usuarioModel.listar(idUsuario))
+    console.log("id usuario Testar", usuarioModel.listar(idUsuario))
     usuarioModel.listar(idUsuario).then(function (resultado) {
-            console.log("Passei pelo controller listar Then")
-            console.log(resultado);
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log("Passei pelo controller listar catch")
-                console.log(erro);
-                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
+        console.log("Passei pelo controller listar Then")
+        console.log(resultado);
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(
+        function (erro) {
+            console.log("Passei pelo controller listar catch")
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
 }
 
 function entrar(req, res) {
@@ -39,7 +39,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -50,7 +50,7 @@ function entrar(req, res) {
                         console.log(resultado);
                         res.json(resultado[0]);
                     } else if (resultado.length == 0) {
-                        
+
                         res.status(403).send("Nome e/ou senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
@@ -82,10 +82,10 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }else if (casa == undefined) {
+    } else if (casa == undefined) {
         res.status(400).send("Sua casa esta undefined!");
-    }else {
-        
+    } else {
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha, casa)
             .then(
@@ -105,50 +105,69 @@ function cadastrar(req, res) {
     }
 }
 function adicionarBio(req, res) {
-        var {bio} = req.body
-        console.log("Bio" + req.body);
-        // var bio = req.body.textBio;
-        var idUsuario = req.params.idUsuario;
-    
-        usuarioModel.adicionarBio(bio, idUsuario)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            )
-            .catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    
-    }
+    var { bio } = req.body
+    console.log("Bio" + req.body);
+    // var bio = req.body.textBio;
+    var idUsuario = req.params.idUsuario;
 
-    function adicionarIMG(req, res) {
-        var {img} = req.body
-        console.log("Controller Editando Imagem")
-        console.log("Img" + req.body);
-        // var bio = req.body.textBio;
-        var idUsuario = req.params.idUsuario;
-    
-        usuarioModel.adicionarIMG(img, idUsuario)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            )
-            .catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    
-    }
+    usuarioModel.adicionarBio(bio, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 
+}
+
+function adicionarIMG(req, res) {
+    var { img } = req.body
+    console.log("Controller Editando Imagem")
+    console.log("Img" + req.body);
+    // var bio = req.body.textBio;
+    var idUsuario = req.params.idUsuario;
+
+    usuarioModel.adicionarIMG(img, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+function listarUsuariosCasa(req, res) {
+
+    console.log("id usuario Testar", usuarioModel.listarUsuariosCasa())
+    usuarioModel.listarUsuariosCasa().then(function (resultado) {
+        console.log("Passei pelo controller listarUsuariosCasa Then")
+        console.log(resultado);
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(
+        function (erro) {
+            console.log("Passei pelo controller listarUsuariosCasa catch")
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
 
 module.exports = {
     entrar,
@@ -156,5 +175,6 @@ module.exports = {
     listar,
     adicionarBio,
     adicionarIMG,
-    testar
+    testar,
+    listarUsuariosCasa
 }
