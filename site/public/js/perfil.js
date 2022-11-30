@@ -16,12 +16,12 @@ async function listar() {
     var perfil = await response.json()
     console.log(perfil[0])
     console.log(perfil[0].bio)
-    console.log(perfil[0].imgPerfil," Imagem Link")
+    console.log(perfil[0].imgPerfil, " Imagem Link")
     sessionStorage.BIO_USUARIO = perfil[0].bio;
     sessionStorage.IMG_PERFIL = perfil[0].imgPerfil;
     if (response.ok) {
         // window.location = "/user/perfil.html"
-             console.log("Atualizou o id e o bio")
+        console.log("Atualizou o id e o bio")
 
     } else if (response.status == 404) {
         console.log("Deu 404!");
@@ -30,7 +30,7 @@ async function listar() {
     }
 
 
-    
+
 }
 
 var inptBio = document.querySelector("#inpBio")
@@ -53,7 +53,7 @@ async function enviarFormulario() {
     if (response.ok) {
         window.alert("Bio atualizada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
         await listar();
-        
+
 
     } else if (response.status == 404) {
         window.alert("Deu 404!");
@@ -63,26 +63,25 @@ async function enviarFormulario() {
 
 }
 
-const inptIMG = document.querySelector("#inpImg")
+var inptIMG;
 var btnIMG = document.getElementsByClassName(".btnEnviarImg")
-function checkIMG(){
-    perfilImg.src = inpImg.value ;
-    if(inptIMG != ""){
-        enviarFormularioIMG();
+function checkIMG() {
+    inptIMG = document.querySelector("#inpImg");
+    if (inptIMG != "") {
+        perfilImg.src = inptIMG.value;
     }
- }
+}
 async function enviarFormularioIMG() {
-    perfilImg.style =`display:flex;`
+    perfilImg.style = `display:flex;`
     const idPerfil = sessionStorage.getItem("ID_USUARIO");
     const img = inptIMG.value
-
 
     const options = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({img})
+        body: JSON.stringify({ img })
     }
     const response = await fetch(`/usuarios/adicionarIMG/${idPerfil}`,
         options
@@ -90,7 +89,7 @@ async function enviarFormularioIMG() {
     if (response.ok) {
         window.alert("IMG atualizada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
         await listar();
-        
+
 
     } else if (response.status == 404) {
         window.alert("Deu 404!");
@@ -101,8 +100,8 @@ async function enviarFormularioIMG() {
 
 const sairBTN = document.querySelector("#btnSair")
 
- function sair(){
+function sair() {
     window.location = "/user/perfil.html"
     console.log(sairBTN)
- }
+}
 
