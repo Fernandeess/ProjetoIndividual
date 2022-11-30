@@ -47,31 +47,9 @@ INSERT INTO Casa(nomeCasa,brasaoCasa,lema) VALUES
 
 ('Stark','https://github.com/Fernandeess/imagePerfil/blob/main/casas/stark.png?raw=true','O Inverno Está Chegando'),
 
-('Arryn','https://github.com/Fernandeess/imagePerfil/blob/main/casas/arryn.png?raw=true','Tão alto quanto a honra'),
-
-('Mormont','https://github.com/Fernandeess/imagePerfil/blob/main/casas/mormont.png?raw=true',' Aqui estamos nós'),
-
 ('Baratheon','https://github.com/Fernandeess/imagePerfil/blob/main/casas/baratheon.png?raw=true','Nossa é a fúria'),
 
-('Greyjoy','https://github.com/Fernandeess/imagePerfil/blob/main/casas/greyjoy.png?raw=true','Nós não semeamos'),
-
-('Lannister','https://github.com/Fernandeess/imagePerfil/blob/main/casas/lannister.png?raw=true','Ouça meu rugido!'),
-
-('Tully','https://github.com/Fernandeess/imagePerfil/blob/main/casas/tully.png?raw=true','Família, Dever, Honra'),
-
-('Hightower','https://github.com/Fernandeess/imagePerfil/blob/main/casas/hightower.png?raw=true','Nós iluminamos o caminho'),
-
-('Tyrell','https://github.com/Fernandeess/imagePerfil/blob/main/casas/Tyrel.png?raw=true','Crescendo forte'),
-
-('Velaryon','https://github.com/Fernandeess/imagePerfil/blob/main/casas/velaryon.png?raw=true','O velho, o verdadeiro, o bravo'),
-
-('Bolton','https://github.com/Fernandeess/imagePerfil/blob/main/casas/bolton.png?raw=true','Nossas lâminas são afiadas'),
-
-('Frey','https://github.com/Fernandeess/imagePerfil/blob/main/casas/frey.png?raw=true','Estamos unidos'),
-
-('Tarly','https://github.com/Fernandeess/imagePerfil/blob/main/casas/tarly.png?raw=true','Primeiros em Batalha'),
-
-('Martell','https://github.com/Fernandeess/imagePerfil/blob/main/casas/martell.png?raw=true',' Insubmissos, Não Curvados, Não Quebrados');
+('Lannister','https://github.com/Fernandeess/imagePerfil/blob/main/casas/lannister.png?raw=true','Ouça meu rugido!');
 
 -- INSERT QUIZ
 -- INSERT INTO Quiz (nomeQuiz)VALUES;
@@ -81,6 +59,11 @@ UPDATE Quiz set nomeQuiz = "Quiz nivel ancião" WHERE idQuiz = 3;
 -- UPDATE Usuario SET bio = '' WHERE idUsuario = 1;
 -- DELETE FROM Usuario where idUsuario =2;
 SELECT * FROM Usuario;
+SELECT * FROM Casa;
+SELECT * FROM usuario JOIN casa on fkCasa = idCasa;
+SELECT nomeCasa, fkCasa FROM usuario JOIN casa on fkCasa = idCasa;
+UPDATE usuario SET fkCasa = 1001 WHERE idusuario = 1009;
+-- SELECT * FROM quiz;
 -- SELECT last_insert_id();
 -- DELETE FROM  Usuario WHERE idUsuario = ;
 -- INSERT INTO Usuario (nome,email,senha,bio,fkCasa) values('Matheus','Rodrigmatheus19@gmail.com','1234','hgughkd',1000);
