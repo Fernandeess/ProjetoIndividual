@@ -10,6 +10,17 @@
     <ol>
     <li>Clone este repositorio na sua máquina.</li>
     <code>git clone https://github.com/Fernandeess/ProjetoIndividual.git</code>
+    <li>Mude para pagina do projeto</li>
+    <li>Rode o Servidor</li>
+    <code>npm start</code>
+    <li>Rode o script do MySQL</li>
+    <li>Altere os seu acesso ao SQL</li>
+    <code>var mySqlConfig = {
+    host: "localhost",
+    database: "gameofthrones",
+    user: "USER",
+    password: "#Password",
+};</code>
     </ol>
 </body>
 
